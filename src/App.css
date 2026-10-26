@@ -1,0 +1,40 @@
+/* Fill the viewport and arrange the main sections vertically. */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Use spare space above the footer on short pages. */
+.app main {
+  flex: 1;
+}
+
+/* Add columns when space allows and stack cards on narrow screens. */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1.5rem;
+}
+
+/* Keep posters within their cards without stretching the images. */
+.movie-poster {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  margin: auto;
+}
+
+.poster-placeholder {
+  min-height: 240px;
+  display: grid;
+  place-items: center;
+}
+
+/* Keep the inputs from becoming too wide on desktop. */
+.create-page {
+  max-width: 640px;
+}
